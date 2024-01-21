@@ -6,8 +6,8 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const config = new DocumentBuilder()
-    .setTitle('Mon Projet Nest')
-    .setDescription('Description de mon projet Nest')
+    .setTitle('My Nest Project')
+    .setDescription('Welcome to my swagger !')
     .setVersion('1.0')
     .build();
 

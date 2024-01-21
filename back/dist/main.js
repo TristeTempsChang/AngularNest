@@ -6,8 +6,8 @@ const app_module_1 = require("./app.module");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     const config = new swagger_1.DocumentBuilder()
-        .setTitle('Mon Projet Nest')
-        .setDescription('Description de mon projet Nest')
+        .setTitle('My Nest Project')
+        .setDescription('Welcome to my swagger !')
         .setVersion('1.0')
         .build();
     const document = swagger_1.SwaggerModule.createDocument(app, config);

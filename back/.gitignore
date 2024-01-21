@@ -1,0 +1,31 @@
+# Dépendances
+node_modules/
+package-lock.json
+yarn.lock
+
+# Fichiers de construction
+/dist/
+/build/
+/.nuxt/
+
+# Fichiers d'environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Fichiers de journalisation et de données
+*.log
+*.sqlite
+
+# Fichiers de l'éditeur
+/.vscode/
+/.idea/
+*.swp
+*.swo
+
+# Autres fichiers et dossiers
+/.DS_Store
+npm-debug.log*
+yarn-error.log*
