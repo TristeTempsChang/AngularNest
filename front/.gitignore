@@ -1,0 +1,34 @@
+# Fichiers de dépendances
+/node_modules
+
+# Dossier de build
+/dist
+/tmp
+/out-tsc
+
+# Fichiers de configuration de l'environnement
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Fichiers et dossiers générés par l'IDE
+/.idea
+/.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Autres fichiers et dossiers
+.DS_Store
+Thumbs.db
+
+# Fichiers de log
+*.log
+
+# Fichiers de cache du système
+npm-debug.log
+yarn-error.log

@@ -1,0 +1,18 @@
+@if (showMessage === true) {
+<div class="fixed bottom-0 left-0 w-full h-full bg-gray-500 bg-opacity-50 z-50 animate fadeIn time1"></div>
+
+<div class="fixed bottom-0 left-0 w-full z-50 animate fadeInUp time2">
+    <div class="bg-white p-6 w-full flex flex-wrap max-[1316px]:justify-center justify-between items-center border-t border-gray-300">
+        <p class="min-[1316px]:w-3/4 max-[1316px]:text-center max-[1316px]:mb-5">
+            We use our own cookies as well as third-party cookies on our website to enhance your experience, 
+            analyse our traffic, and for security and marketing. Select "Accept All" to allow
+            them to be used. Read our <a href="#" class="underline"><strong>Cookie Policy</strong>.</a>
+        </p>
+        <div class="flex space-x-4 item-center gap-2">
+            <button class="bg-gray-300 hover:bg-gray-400 py-2 px-4 rounded" (click)="blockCookies()">Block all cookies</button>
+            <button class="bg-gray-800 hover:bg-gray-600 text-white py-2 px-4 rounded" (click)='acceptCookies()'>Accept all</button>
+            <button class="max-[1316px]:absolute max-[1316px]:top-0 max-[1316px]:right-2 max-[1316px]:mt-2" (click)="close()"><i class="fa-solid fa-xmark text-xl"></i></button>
+        </div>
+    </div>
+</div>
+}

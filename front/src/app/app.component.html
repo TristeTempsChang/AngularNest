@@ -1,3 +1,8 @@
-<app-header></app-header>
+@if(!hideHeaderFooter) {
+    <app-header></app-header>
+}
 <router-outlet></router-outlet>
-<app-footer></app-footer>
+@if(!hideHeaderFooter) {
+    <app-footer></app-footer>
+}
+<app-cookie-banner></app-cookie-banner>

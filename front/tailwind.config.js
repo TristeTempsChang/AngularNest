@@ -8,7 +8,11 @@ module.exports = {
     fontFamily: {
       'standard': ["Montserrat"],
       'serif': ['ui-serif'],
-      'sans': ['ui-sans-serif', 'system-ui']
+      'sans': ['ui-sans-serif', 'system-ui'],
+      'inter': ['Inter']
+    },
+    boxShadow: {
+      'custom': '2px 2px 4px #00000080',
     }
   },
   plugins: [],

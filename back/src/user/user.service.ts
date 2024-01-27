@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from 'src/typeorm/entities/User';
 import { CreateUserParams, updateUserParams } from 'src/utils/types';
@@ -12,22 +12,51 @@ export class UserService {
     }
 
     findUsers() {
-        return this.userRepository.find();
+        try{
+            return this.userRepository.find();
+        } catch (error) {
+            console.error(error);
+            throw new InternalServerErrorException('Error fetching users');
+        }
+    }
+
+    findUser(email: string) : Promise<User | undefined> {
+        try{
+            return this.userRepository.findOneBy({ email })
+        } catch (error) {
+            console.error(error);
+            throw new InternalServerErrorException('Error fetching user');
+        }
     }
 
     createUser(userDetails: CreateUserParams) {
-        const newUser = this.userRepository.create({
-            ...userDetails,
-            createdAt: new Date(),
-        });
-        return this.userRepository.save(newUser);
+        try {
+            const newUser = this.userRepository.create({
+                ...userDetails,
+                createdAt: new Date(),
+            });
+            return this.userRepository.save(newUser);
+        } catch (error) {
+            console.error(error);
+            throw new InternalServerErrorException('Error creating user');
+        }
     }
 
     updateUser(id: number, updateUserDetails: updateUserParams){
-      return this.userRepository.update({ id }, { ...updateUserDetails });
+        try {
+            return this.userRepository.update({ id }, { ...updateUserDetails });
+        } catch (error) {
+            console.error(error);
+            throw new InternalServerErrorException('Error updating user');
+        }
     }
 
     deleteUser(id: number){
-        return this.userRepository.delete({ id });
+        try{
+            return this.userRepository.delete({ id });
+        } catch (error) {
+            console.error(error);
+            throw new InternalServerErrorException('Error deleting user');
+        }
     }
 }
